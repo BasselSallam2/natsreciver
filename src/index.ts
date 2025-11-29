@@ -1,5 +1,5 @@
 import { connect } from "nats";
-const NATS_URL = "nats://nats-server:4222";
+const NATS_URL = "nats://main-server:4222";
 const SUBJECT = "orders";
 import activityService from "models/activity/activity.service";
 import express from "express";
