@@ -4,7 +4,9 @@ const SUBJECT = "orders";
 import activityService from "models/activity/activity.service";
 import express from "express";
 import { connectDB } from "@config/DB.config";
+import "dotenvx/config";
 const app = express();
+
 
 
 
@@ -44,7 +46,7 @@ app.get("/log", async (req, res, next) => {
   res.send(data);
 });
 
-app.listen(8080, async () => {
+app.listen(process.env.port, async () => {
   await connectDB();
-  console.log("server is running on port 8080");
+  console.log("server is running on port ${process.env.port}");
 });
