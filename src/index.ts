@@ -46,7 +46,7 @@ app.get("/log", async (req, res, next) => {
   res.send(data);
 });
 
-app.listen(process.env.port, async () => {
+app.listen(parseInt(process.env.port || '3000'), '0.0.0.0', async () => {
   await connectDB();
-  console.log("server is running on port ${process.env.port}");
+  console.log(`server is running on port ${process.env.port}`);
 });
